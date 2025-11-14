@@ -1,4 +1,3 @@
-import styles from "./homePageSteps.module.css";
 import {
   PiTargetDuotone,
   PiTrophyDuotone,
@@ -8,93 +7,72 @@ import {
 
 export default function HomePageSteps() {
   return (
-    <section className={styles.stepsContainer}>
+    <section className="bg-white py-12 px-6 text-center font-['Space_Grotesk',sans-serif]">
       {/* === Header === */}
-      <div className={styles.stepsHeader}>
-        <h2 className={styles.stepsTitle}>
+      <div className="w-[90%] mx-auto mb-16">
+        <h2 className="w-[65%] mx-auto mb-4 text-[2.8rem] font-bold text-[#111] leading-[1.3] max-[1024px]:w-[80%] max-[1024px]:text-[2.2rem] max-[768px]:w-full max-[768px]:text-[1.8rem] max-[480px]:text-[1.6rem]">
           From searching to interviewing, just 4 simple steps.
         </h2>
-        <p className={styles.stepsSubtitle}>
+        <p className="w-[60%] mx-auto text-[1.15rem] text-[#444] leading-[1.6] max-[1024px]:w-[75%] max-[1024px]:text-[1rem] max-[768px]:w-[95%] max-[768px]:text-[1rem] max-[480px]:text-[0.9rem]">
           We turn your endless job hunt into a smooth, automated path to
           interview calls.{" "}
-          <span className={styles.highlight}>
+          <span className="text-[#ff4c00] font-medium">
             You set the goal, Flashfire takes care of the journey.
           </span>
         </p>
       </div>
 
       {/* === Steps Grid === */}
-      <div className={styles.stepsGrid}>
-        {/* STEP 1 */}
-        <div className={styles.stepCard}>
-          <div className={styles.stepText}>
-            <h3 className={styles.stepNumber}>\\ STEP 1</h3>
-            <h4 className={styles.stepHeading}>You share your goals.</h4>
-            <p className={styles.stepDescription}>
-              Tell us what you are aiming for, your dream role, location, and
-              experience. We learn your story so we can find the right
-              opportunities for you.
-            </p>
+      <div className="grid grid-cols-2 gap-6 justify-center items-stretch w-[85%] mx-auto max-[1024px]:w-[90%] max-[768px]:grid-cols-1 max-[768px]:w-[95%]">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="bg-[#fff7f4] border border-[#f1e1d8] rounded-[0.6rem] p-6 flex flex-col justify-between text-left transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_4px_10px_rgba(0,0,0,0.05)]"
+          >
+            <div className="bg-white rounded-[0.3rem] p-5 pb-0">
+              <h3 className="text-[2.6rem] font-bold tracking-[0.08em] mb-2 max-[768px]:text-[2.2rem] bg-gradient-to-r from-[rgba(245,93,29,1)] to-[rgba(0,0,0,1)] text-transparent bg-clip-text">
+                \\STEP {index + 1}
+              </h3>
+              <h4 className="text-[1.8rem] font-bold text-[#111] mb-3 max-[1024px]:text-[1.5rem] max-[768px]:text-[1.3rem]">
+                {step.heading}
+              </h4>
+              <p className="text-[1.1rem] text-[#333] leading-[1.6] max-[768px]:text-[0.95rem]">
+                {step.description}
+              </p>
+            </div>
+            <div className="text-[6rem] text-[#ff4c00] opacity-90 self-center mt-6 max-[1024px]:text-[5rem] max-[768px]:text-[3.5rem]">
+              {step.icon}
+            </div>
           </div>
-          <div className={styles.stepIcon}>
-            <PiTargetDuotone />
-          </div>
-        </div>
-
-        {/* STEP 2 */}
-        <div className={styles.stepCard}>
-          <div className={styles.stepText}>
-            <h3 className={styles.stepNumber}>\\ STEP 2</h3>
-            <h4 className={styles.stepHeading}>
-              We build your winning profile.
-            </h4>
-            <p className={styles.stepDescription}>
-              Our AI rewrites your resume and LinkedIn to match top U.S.
-              recruiter searches. Your profile starts showing up where it
-              matters, on the right screens.
-            </p>
-          </div>
-          <div className={styles.stepIcon}>
-            <PiTrophyDuotone />
-          </div>
-        </div>
-
-        {/* STEP 3 */}
-        <div className={styles.stepCard}>
-          <div className={styles.stepText}>
-            <h3 className={styles.stepNumber}>\\ STEP 3</h3>
-            <h4 className={styles.stepHeading}>
-              Flashfire AI applies for you.
-            </h4>
-            <p className={styles.stepDescription}>
-              We apply to 1000+ curated roles for you, based on your goals and
-              visa needs. No spam, no mass blasts, only smart, targeted
-              applications.
-            </p>
-          </div>
-          <div className={styles.stepIcon}>
-            <PiRocketDuotone />
-          </div>
-        </div>
-
-        {/* STEP 4 */}
-        <div className={styles.stepCard}>
-          <div className={styles.stepText}>
-            <h3 className={styles.stepNumber}>\\ STEP 4</h3>
-            <h4 className={styles.stepHeading}>
-              You start getting interview calls.
-            </h4>
-            <p className={styles.stepDescription}>
-              As applications go out, you start getting real calls from real
-              recruiters. We track, follow up, and optimize every step so you
-              can focus on preparing.
-            </p>
-          </div>
-          <div className={styles.stepIcon}>
-            <PiHandshakeDuotone />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 }
+
+const steps = [
+  {
+    heading: "You share your goals.",
+    description:
+      "Tell us what you are aiming for, your dream role, location, and experience. We learn your story so we can find the right opportunities for you.",
+    icon: <PiTargetDuotone />,
+  },
+  {
+    heading: "We build your winning profile.",
+    description:
+      "Our AI rewrites your resume and LinkedIn to match top U.S. recruiter searches. Your profile starts showing up where it matters, on the right screens.",
+    icon: <PiTrophyDuotone />,
+  },
+  {
+    heading: "Flashfire AI applies for you.",
+    description:
+      "We apply to 1000+ curated roles for you, based on your goals and visa needs. No spam, no mass blasts, only smart, targeted applications.",
+    icon: <PiRocketDuotone />,
+  },
+  {
+    heading: "You start getting interview calls.",
+    description:
+      "As applications go out, you start getting real calls from real recruiters. We track, follow up, and optimize every step so you can focus on preparing.",
+    icon: <PiHandshakeDuotone />,
+  },
+];

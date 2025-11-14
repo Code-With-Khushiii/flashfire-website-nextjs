@@ -61,7 +61,14 @@
   z-index: 3;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
-  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+  -webkit-clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 50%,
+    70% 100%,
+    30% 100%,
+    0% 50%
+  );
 }
 
 .logoPlaceholder {
@@ -105,18 +112,17 @@
   width: 20rem;
   height: 32rem;
   aspect-ratio: 9 / 16;
-  border-radius: 0.4rem;
+  border-radius: 0;
   overflow: hidden;
   background-color: #fffaf8;
-  padding: 0.6rem;
+  padding: 0;
+  border: 2px solid #000;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
-  transform-origin: center center;
   flex-shrink: 0;
 }
 
 .videoCard:hover {
-  transform: scale(1.04) rotate(0deg);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 
@@ -126,7 +132,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0.8rem;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -162,9 +168,12 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: #000;
+  border-top: 2px solid #ff4c00;
   color: #fff;
   text-align: left;
   padding: 0.8rem 1.2rem;
+  border-radius: 0;
 }
 
 .userName {
@@ -205,7 +214,14 @@
     height: 6rem;
     bottom: -3rem;
     clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
-    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+    -webkit-clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 50%,
+      70% 100%,
+      30% 100%,
+      0% 50%
+    );
   }
 }
 

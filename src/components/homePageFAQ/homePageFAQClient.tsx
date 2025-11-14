@@ -52,19 +52,22 @@ export default function HomePageFAQClient() {
 
       {/* === Book a Demo CTA === */}
       <div className={styles.demoSectionOuter}>
-        <div className={styles.demoSection}>
+        <div className={`${styles.demoSection} bg-[rgba(245,93,29,1)]`}>
           <h5 className={styles.demoSubheading}>
-            GOT FURTHER QUESTIONS? LET’S TALK!
+            GOT FURTHER QUESTIONS? LET&rsquo;S TALK!
           </h5>
 
           <h2 className={styles.demoHeading}>
             BOOK A DEMO{" "}
-            <span className={styles.fireIcon}>
+            <span
+              className={`${styles.fireIcon} inline-flex items-center -mx-4 `}
+            >
               <Image
-                src="/images/flashfire-logo-white.png"
-                alt="Flashfire logo"
-                width={32}
-                height={32}
+                src="/images/character.png"
+                alt="Flashfire mascot"
+                width={96}
+                height={96}
+                className="w-20 h-20  left-1 max-[600px]:w-16 max-[600px]:h-16"
               />
             </span>{" "}
             CALL
